@@ -16,7 +16,6 @@
   "scripts": {
 
     "start": "node bot.js",
-    "heroku-postbuild": "npm install discord.js"
   },
 
   "dependencies": {
