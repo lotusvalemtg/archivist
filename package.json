@@ -1,0 +1,8 @@
+{
+  “name”: “The Archivist”,
+  “version”: “1.0.0”,
+  “description”: “Copies content files from one channel to another”,
+  “main”: “bot.js”,
+  “author”: “The Lotus Vale”,
+  “dependencies”: {}
+}
