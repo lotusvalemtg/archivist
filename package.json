@@ -1,8 +1,23 @@
 {
-  “name”: “The Archivist”,
-  “version”: “1.0.0”,
-  “description”: “Copies content files from one channel to another”,
-  “main”: “bot.js”,
-  “author”: “The Lotus Vale”,
-  “dependencies”: {}
+
+  "name": "The Archivist",
+
+  "description": "Example",
+
+  "version": "1.0.0",
+
+  "main": "bot.js",
+
+  "scripts": {
+
+    "start": "node bot.js"
+
+  },
+
+  "dependencies": {
+
+    "discord.js": "12.3.0",
+
+  }
+
 }
