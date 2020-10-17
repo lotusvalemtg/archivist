@@ -27,7 +27,7 @@ client.on('message', async message => {
                //Get existing message to edit
                const targetMessage = targetChannel.messages.fetch('767073306443513926');
                targetMessageContent = targetMessage.content;
-               targetMessage.edit(${targetMessageContent} + '\n' + ${url});
+               targetMessage.edit(`${targetMessageContent} + "\n" + ${url}`);
              }
            }
            else
