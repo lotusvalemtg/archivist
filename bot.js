@@ -19,7 +19,7 @@ client.on('message', async message => {
            const contains_resources = false;
             
           extensions.forEach(function(e){
-            console.log(url.match(/\.(zip|rar|7z|psd|afphoto|xcf|afdesign)/g) != null);
+            console.log((/\.(zip|rar|7z|psd|afphoto|xcf|afdesign)/g).test(url));
             if(url.indexOf(e) > -1){
               contains_resources = true
               console.log(`Match using: ${url} and ${e}`);
