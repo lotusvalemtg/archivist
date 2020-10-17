@@ -18,7 +18,12 @@ client.on('message', async message => {
            console.log("Searching for extensions: " + extensions.join(","));
            const contains_resources = false;
             
-          extensions.forEach(e => console.log(e))
+          extensions.forEach(e => 
+                              if(url.includes(e)){
+                                  contains_resources = true
+                                  console.log(`Match using: ${url} and ${e}`);
+                              } 
+                            );
           
            if(extensions.some(e => url.includes(e)))
            {
