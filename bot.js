@@ -19,13 +19,13 @@ client.on('message', async message => {
            //const contains_resources = False;
            if(extensions.some(e => url.includes(e)))
            {
-              console.log(`Match using: ${url}`);
+              console.log(`Match using: ${url} and ${e}`);
               const target_channel = bot.channels.get('766362124444106773');
               await target_channel.send(message.content);
            }
            else
            {
-             console.log(`No match using: ${url}`);
+             console.log(`No match using: ${url} and ${e}`);
            }
         }
     } 
