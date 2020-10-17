@@ -19,7 +19,7 @@ client.on('message', async message => {
            const contains_resources = false;
             
           extensions.forEach(function(e){
-            if(url.includes(e)){
+            if(url.indexOf(e) > -1){
               contains_resources = true
               console.log(`Match using: ${url} and ${e}`);
             }
