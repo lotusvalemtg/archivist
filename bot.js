@@ -20,7 +20,7 @@ client.on('message', async message => {
            if((/\.(zip|rar|7z|psd|afphoto|xcf|afdesign|drive\.google)/g).test(url))
            {
              console.log(`Resource found in ${url}`);
-              const target_channel = bot.channels.get('766362124444106773');
+              const target_channel = client.channels.get('766362124444106773');
               await target_channel.send(message.content);
            }
            else
