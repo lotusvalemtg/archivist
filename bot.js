@@ -10,6 +10,7 @@ client.on('ready', () => {
 client.on('message', async message => {
     if (message.channel.id === '766312424911011861')
     {
+        console.log(`Message added to general`);
         const urls = message.content.matchAll(regexpURL);
         for (const url of urls) {
            if(extensions.some(e => url.includes(e)))
