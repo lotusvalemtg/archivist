@@ -16,7 +16,10 @@ client.on('message', async message => {
         for (const url of urls) {
            console.log(`URL found ${url}`);
            console.log("Searching for extensions: " + extensions.join(","));
-           //const contains_resources = False;
+           const contains_resources = false;
+            
+          extensions.forEach(e => console.log(e))
+          
            if(extensions.some(e => url.includes(e)))
            {
               console.log(`Match using: ${url}`);
