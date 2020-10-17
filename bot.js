@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const regexpURL = RegExp('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+','g');
 //'^(https?):\/\/[^\s$.?#].[^\s]*$'
-let extensions = ['.zip', '.rar', '.7z', '.psd', '.afphoto', '.xcf', '.afdesign', 'drive.google']
+const extensions = [".zip", ".rar", ".7z", ".psd", ".afphoto", ".xcf", ".afdesign", "drive.google"]
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -15,7 +15,8 @@ client.on('message', async message => {
         const urls = message.content.matchAll(regexpURL);
         for (const url of urls) {
            console.log(`URL found ${url}`);
-           if(extensions.some(e => url.includes(e)))
+           console.log("Searching for extensions: " + extensions.join(","));
+           if(extensions.some(url.includes.bind(url)))
            {
               console.log(`resource found ${url}`);
               const target_channel = bot.channels.get('766362124444106773');
