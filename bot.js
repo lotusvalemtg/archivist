@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const regexpURL = RegExp('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+','g');
 //'^(https?):\/\/[^\s$.?#].[^\s]*$'
-const extensions = ['.zip', '.rar', '.7z', '.psd', '.afphoto', '.xcf', '.afdesign', 'drive.google']
+let extensions = ['.zip', '.rar', '.7z', '.psd', '.afphoto', '.xcf', '.afdesign', 'drive.google']
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
