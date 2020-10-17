@@ -21,7 +21,7 @@ client.on('message', async message => {
            {
              console.log(`Resource found in ${url}`);
              console.log('Adding resource to templates')
-             let targetChannel = message.guild.channels.get('766362124444106773');
+             let targetChannel = client.channels.cache.get('766362124444106773');
              if (targetChannel) targetChannel.send(message.content);
            }
            else
