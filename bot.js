@@ -18,22 +18,21 @@ client.on('message', async message => {
            console.log("Searching for extensions: " + extensions.join(","));
            const contains_resources = false;
             
-          extensions.forEach(e => 
-                              if(url.includes(e)){
-                                  contains_resources = true
-                                  console.log(`Match using: ${url} and ${e}`);
-                              } 
-                            );
+          extensions.forEach(function(e){
+            if(url.includes(e)){
+              contains_resources = true
+              console.log(`Match using: ${url} and ${e}`);
+            }
+            else
+            {
+              console.log(`No match using: ${url} and ${e}`);
+            }
+          });
           
-           if(extensions.some(e => url.includes(e)))
+           if(contains_resources)
            {
-              console.log(`Match using: ${url}`);
               const target_channel = bot.channels.get('766362124444106773');
               await target_channel.send(message.content);
-           }
-           else
-           {
-             console.log(`No match using: ${url}`);
            }
         }
     } 
