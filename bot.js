@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const config = require('./config.json');
 const client = new Discord.Client();
 const regexpURL = RegExp('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+','g');
 //'^(https?):\/\/[^\s$.?#].[^\s]*$'
@@ -17,19 +18,18 @@ client.on('message', async message => {
            console.log(`URL found ${url}`);
            console.log("Searching for extensions: " + extensions.join(","));          
           
-           if((/\.(zip|rar|7z|psd|afphoto|xcf|afdesign|drive\.google)/g).test(url))
+           if((/\.(zip|rar|7z|psd|afphoto|xcf|afdesign)|(drive.google)/g).test(url))
            {
              console.log(`Resource found in ${url}`);
              console.log('Adding resource to templates')
              //Get templates channel
              let targetChannel = client.channels.cache.get('766362124444106773');
-             if (targetChannel){
-               //Get existing message to edit
-               targetChannel.messages.fetch('767073306443513926')
-                 .then(targetMessage => {
-                     const targetMessageContent = targetMessage.content;
-                     targetMessage.edit(`${targetMessageContent} + "\n" + ${url}`);
-                  });
+             if (targetChannel){ 
+                targetChannel.send(`${message.author} - ${url}`)
+                    .then((sentmsg) => {
+                        const receivedEmbed = sentmsg.embeds[0];
+                        sentmsg.edit(`${message.author} - [${receivedEmbed.title}] \n <${url}>`);
+                    });
              }
            }
            else
@@ -42,5 +42,4 @@ client.on('message', async message => {
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);//BOT_TOKEN is the Client Secret
-
 
