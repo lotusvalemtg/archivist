@@ -20,8 +20,9 @@ client.on('message', async message => {
            if((/\.(zip|rar|7z|psd|afphoto|xcf|afdesign|drive\.google)/g).test(url))
            {
              console.log(`Resource found in ${url}`);
-              const target_channel = client.channels.fetch('766362124444106773');
-              await target_channel.send(message.content);
+             console.log('Adding resource to templates')
+             let targetChannel = message.guild.channels.get('766362124444106773');
+             if (targetChannel) targetChannel.send(message.content);
            }
            else
           {
