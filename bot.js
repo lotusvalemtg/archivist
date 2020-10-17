@@ -21,8 +21,14 @@ client.on('message', async message => {
            {
              console.log(`Resource found in ${url}`);
              console.log('Adding resource to templates')
+             //Get templates channel
              let targetChannel = client.channels.cache.get('766362124444106773');
-             if (targetChannel) targetChannel.send(message.content);
+             if (targetChannel){
+               //Get existing message to edit
+               const targetMessage = targetChannel.messages.fetch('767073306443513926')
+               targetMessageContent = targetMessage.content;
+               targetMessage.edit(${targetMessageContent} + '\n' + ${url})
+             }
            }
            else
           {
